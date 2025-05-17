@@ -1,0 +1,7 @@
+
+SELECT c.Customer_Number, c.First_Name, c.Last_Name
+FROM Customer c
+JOIN Account a ON c.Customer_Number = a.Customer_Number
+JOIN Transaction t ON a.Account_Number = t.Account_Number
+GROUP BY c.Customer_Number, c.First_Name, c.Last_Name
+ORDER BY SUM(t.Amount) DESC;

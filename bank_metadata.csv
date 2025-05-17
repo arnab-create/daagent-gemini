@@ -1,0 +1,21 @@
+Table,Column Name,Data Type,Primary Key,Foreign Key,Description
+Customer,Customer_Number,INT,Yes,No,Unique identifier for each customer
+Customer,First_Name,VARCHAR(50),No,No,The first name of the customer
+Customer,Last_Name,VARCHAR(50),No,No,The last name of the customer
+Customer,Address,VARCHAR(100),No,No,The street address of the customer
+Customer,City,VARCHAR(50),No,No,The city where the customer resides
+Customer,State,VARCHAR(2),No,No,The two-letter state code of the customer's address
+Customer,Zip_Code,VARCHAR(10),No,No,The postal code of the customer's address
+Customer,Phone_Number,VARCHAR(15),No,No,The phone number of the customer
+Customer,Email,VARCHAR(100),No,No,The email address of the customer (unique)
+Account,Account_Number,INT,Yes,No,Unique identifier for each bank account
+Account,Customer_Number,INT,No,Yes (References Customer.Customer_Number),The unique identifier of the customer who owns this account
+Account,Account_Type,VARCHAR(20),No,No,The type of the bank account (e.g., Checking, Savings, Credit Card)
+Account,Balance,DECIMAL(15, 2),No,No,The current balance of the account
+Account,Opening_Date,DATE,No,No,The date the account was opened
+Transaction,Transaction_ID,INT,Yes,No,Unique identifier for each transaction
+Transaction,Account_Number,INT,No,Yes (References Account.Account_Number),The unique identifier of the account involved in the transaction
+Transaction,Transaction_Date,DATETIME,No,No,The date and time when the transaction occurred
+Transaction,Transaction_Type,VARCHAR(20),No,No,The type of the transaction (e.g., Deposit, Withdrawal, Transfer, Payment)
+Transaction,Amount,DECIMAL(15, 2),No,No,The amount of money involved in the transaction
+Transaction,Description,VARCHAR(255),No,No,A brief description of the transaction
